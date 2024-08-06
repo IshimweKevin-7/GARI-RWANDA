@@ -1,0 +1,225 @@
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#movie-list {
+  margin-bottom: 30px;
+}
+
+#booking-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width:500px;
+  margin: 0 auto;
+  font-size: 40px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input, select {
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  font-size: 28px;
+  background-color: rgba(255, 255, 255, 0.836);
+  color: black;
+}
+
+#book-button {
+  padding: 20px 20px;
+  background: linear-gradient(to left, rgba(45, 236, 7, 0.911), rgba(14, 184, 127, 0.911) 50%, rgb(6, 130, 146));
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+#book-button:hover {
+  background: linear-gradient(to left, rgba(45, 236, 7, 0.705), rgba(14, 184, 127, 0.74) 50%, rgba(6, 130, 146, 0.74));
+}
+
+#booking-confirmation {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 40px;
+}
+
+#booking-confirmation p {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #booking-form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  input, select {
+    width: 100%;
+  }
+
+  #book-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h1, h2 {
+    font-size: 1.5em;
+  }
+
+  input, select {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  #book-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+[data-theme=light] {
+	--line: hsl(0 0% 10% / 0.15);
+	color-scheme: light only;
+	background: hsl(0 0% 98%);
+}
+[data-theme=dark] {
+	--line: hsl(0 0% 90% / 0.15);
+	color-scheme: dark only;
+	background: hsl(0 0% 2%);
+}
+
+body {
+	display: grid;
+	place-items: center;
+	align-content: center;
+	gap: 1rem;
+	min-height: 100vh;
+	font-family:  "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+}
+
+body::before {
+  --size: 60px;
+  content: '';
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(
+        90deg,
+        var(--line) 1px,
+        transparent 1px var(--size)
+      )
+      50% 50% / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+  mask: linear-gradient(-15deg, transparent 30%, white);
+  top: 0;
+  transform-style: flat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+aside {
+	padding: 0.5rem 0.75rem;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 6px;
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	font-weight: 300;
+	line-height: 1.5;
+	white-space: nowrap;
+	transition: all 0.2s;
+}
+
+@supports(color: color-mix(in oklch, red 0%, white)) {
+	[data-theme="dark"] aside {
+		border-color: color-mix(in oklch, var(--color) 5%, oklch(100% 0 0 / 15%));
+		background: color-mix(in oklch, var(--color) 50%, oklch(0% 0 0 / 50%));
+	  color: color-mix(in oklch, var(--color) 50%, oklch(100% 0 0));
+	}
+	[data-theme="light"] aside {
+		border-color: color-mix(in oklch, var(--color) 50%, oklch(100% 0 0 / 15%));
+		background: color-mix(in oklch, var(--color) 25%, oklch(100% 0 0 / 50%));
+	  color: color-mix(in oklch, var(--color) 100%, oklch(100% 0 0));
+	}
+	aside::selection {
+		background: color-mix(in oklch, var(--color) 90%, oklch(100% 0 0));
+		color: color-mix(in oklch, var(--color) 10%, oklch(100% 0 0));
+	}
+}
+
+
+
+/* Sun and Moon Sizing*/
+
+[aria-pressed] {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	width: 98px;
+	aspect-ratio: 1;
+	display: grid;
+	place-items: center;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	border-radius: 6px;
+}
+
+
+[aria-pressed] svg {
+	width: 50%;
+}
+
+[aria-pressed=true] path:first-of-type,
+[aria-pressed=false] path:last-of-type {
+	display: none;
+}
+[aria-pressed=false] path:first-of-type,
+[aria-pressed=true] path:last-of-type {
+	display: block;
+}
+
+
+
+::view-transition-old(root) {
+	z-index: -1;
+	animation: none;
+}
+::view-transition-new(root) {
+	z-index: 2;
+	animation: unclip 1s both;
+}
+
+@keyframes unclip {
+	0% {
+		clip-path: inset(0 0 100% 100%);
+	}
+	100% {
+		clip-path: inset(0 0 0 0);
+	}
+}
