@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login - GARI RWANDA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="fonts.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="poppins-regular bg-gray-200">
+    <!-- bg-gray-200 for light mode -->
+    <!-- bg-gray-950 text-white for dark mode -->
+    <div class="mx-auto">
+      <!-- <div class="splash-screen text-white text-center flex h-full flex-col justify-center items-center">
+            <h2 class="text-3xl mb-4">Welcome to</h2>
+            <h1 class="text-6xl">GARI RWANDA</h1>
+        </div> -->
+      <div class="form-row m-8 shadow-xl">
+        <div class="form-col">
+          <img src="images/bear-cartoon.jpg" alt="" class="form-image shadow-xl" />
+        </div>
+        <div class="p-8 bg-white">
+            <!-- bg-white for light mode -->
+            <!-- bg-gray-900 for dark mode -->
+          <h2 class="text-2xl mt-2 mb-2">Login</h2>
+          <h2 class="text-5xl poppins-semibold mb-12">GIRA RWANDA</h2>
+          <form action="#" method="POST" id="form">
+            <div class="form-group my-2">
+              <label for="email" class="text-md block w-full mb-1">Email</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form-control poppins-light border py-2 px-4 block w-full rounded-md"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group my-2">
+              <label for="password" class="text-md block w-full mb-1"
+                >Password</label
+              >
+              <div class="input-container relative">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control poppins-light border py-2 px-4 block w-full rounded-md"
+                  placeholder="Enter your password"
+                  required
+                />
+                <button class="toggle-show-btn absolute right-2">
+                  <i class="fa fa-eye"></i>
+                </button>
+              </div>
+              <div class="flex flex-row gap-2 mt-2">
+                <input
+                  type="checkbox"
+                  name="show-password"
+                  id="show-password"
+                  aria-checked="false"
+                />
+                <p>Remember Me</p>
+              </div>
+            </div>
+            <p class="text-blue-500 mb-2"><a href="#">Forgot password?</a></p>
+            <button
+              class="w-full block bg-blue-600 hover:bg-gray-100 hover:text-black text-white py-2 mt-4 mb-2 rounded-md"
+            >
+              Login
+            </button>
+          </form>
+          <a
+            href="#"
+            class="block py-2 px-4 border rounded-md my-2 flex flex-row items-center hover:bg-gray-200"
+          >
+            <img src="images/logo-google.png" alt="icon-google" class="w-5">
+            <p class="text-center w-full">Login with Google</p>
+          </a>
+          <div class="mt-4">
+            <p class="poppins-light">New User? <a href="sign-up.html" class="text-blue-600">Create account now!</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="form.js"></script>
+  </body>
+</html>

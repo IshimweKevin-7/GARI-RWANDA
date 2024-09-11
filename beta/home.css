@@ -1,0 +1,36 @@
+.home-page-intro {
+  margin-top: 100px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .home-page-intro h1 {
+    font-size: 120px;
+  }
+  .home-page-intro h2 {
+    font-size: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .home-page-intro h1 {
+    font-size: 100px;
+  }
+  .home-page-intro h2 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .home-page-intro h1 {
+    font-size: 80px;
+  }
+  .home-page-intro h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .home-page-intro h1 {
+    font-size: 60px;
+  }
+  .home-page-intro h2 {
+    font-size: 30px;
+  }
+}
